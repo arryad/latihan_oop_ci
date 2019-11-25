@@ -1,0 +1,162 @@
+/*style body*/
+*{
+	font-family: calibri; /*mengatur font*/
+
+}
+
+/*style menu bar*/
+#Menubar{
+	/*mengatur warna background pada menubar*/
+	background-color:white; 
+	/*mengatur margin atas 0px, kanan 50px, bawah 50px, dan kiri 50px*/
+	margin:0px, 50px, 50px, 50px; 
+}
+
+/*style li didalam ul pada menulink didalam menubar*/
+#Menubar #header ul li{
+	/*mengatur agar menulink diline yang sama*/
+	display:inline-block; 
+	/*mengatur ukuran pada menulink*/
+	padding:10px;
+}
+
+/*style id hr0 pada menuutama didalam menubar*/
+#Menubar #menuutama #hr0{
+	color:#BB0415; /*memberi warna*/
+}
+
+/*style id hr1 pada menuutama didalam menubar*/
+#Menubar #menuutama #hr1{
+	color:#BC8A04; /*memberi warna*/ 
+}
+
+/*style id hr2 pada menuutama didalam menubar*/
+#Menubar #menuutama #hr2{
+	color:#D406BE; /*memberi warna*/
+}
+
+/*style id hr3 pada menuutama didalam menubar*/
+#Menubar #menuutama #hr3{
+	color:#15F6F9; /*memberi warna*/
+}
+
+/*style id hr4 pada menuutama didalam menubar*/
+#Menubar #menuutama #hr4{
+	color:#06C806; /*memberi warna*/	
+}
+
+#Menubar #menuutama .penjorokkanfloat{
+	float:right;
+}
+
+/*style id abc pada menulink didalam menubar*/
+#Menubar #header #abc{
+	/*mengatur besar secara melebar kekanan*/
+	padding-right: 850px;		
+}
+
+/*style li didalam ul pada menuutama didalam menubar*/
+#Menubar #menuutama ul li {
+	/*mengatur penjorokkan dari kiri*/
+	margin-left:25px;
+	/*mengatur text agar tidak ada decorasi apapun*/
+	text-decoration:none;
+	/*mengatur text agar tetap digaris yang sama berjejeran*/
+	display:inline-block;
+	/*klik drop down*/
+	position:relative;
+}
+
+/*style a didalam li didalam ul pada menuutama didalam menubar*/
+#Menubar #menuutama ul li a{
+	/*mengatur wa*/
+	color:black;
+	/*mengatur text agar tidak ada decorasi apapun*/
+	text-decoration:none;	
+	/*mengatur agar menu sesuai dengan font yang ada*/
+	display: block;
+	/*mengatur besar*/
+	padding: 10px;
+	/*mengatur perataan tengah*/
+	text-align: center;
+}
+
+/*style ul didalam ul pada menuutama didalam menu bar*/
+#Menubar #menuutama ul ul{
+	/*mengatur kolom dropdown agar tersembunyi sebelum di klik*/
+	visibility:hidden;
+	/*mengatur posisi secara tetap*/
+	position: absolute; 
+	/*mengatur besar*/
+	width:100%;	
+}
+
+/*style ul hovernya atau mouse kunjungan didalam li didalam ul pada menuutama didalam menubar*/
+#Menubar #menuutama ul li:hover ul{
+	/*menampilkan dropdown*/
+	visibility:visible;
+}
+
+#Menubar #menuutama ul li:hover ul li:hover{
+	/*mengatur warna*/
+	background-color: #F58AF4;
+}
+
+/*style li didalam ul dimana li didalam ul pada menuutama didalam menubar*/
+#Menubar #menuutama ul li ul li{
+	/*mengatur penjorokkan dari atas*/
+	margin-top:-15px;	
+	/*mengatur penjorokkan dari kiri*/
+	margin-left: -40px;
+	/*mengatur besar*/
+	width: 100%;
+}
+
+/*style id jarakmu*/
+#jarakmu{
+	/*mengatur penjorokkan dari kanan*/
+	margin-right:560px;
+}
+
+/*style class copy didalam class footer*/
+.footer .copy {   
+	/*mengatur perataan text ditengah*/
+	text-align: center;
+	/*mengatur ukuran font*/
+	font-size: 14px;
+}
+
+/*style id content*/
+#content{
+	/*mengatur perataan text ditengah*/
+	text-align: center;
+}
+
+
+#content #laptop .box hr{
+	width:100px;
+	color:#129DF6;
+	position: center;
+}
+
+#content a{
+	display:inline-block;
+	color:black;
+	text-decoration: none;
+	
+}
+
+#content #judulpage{
+	margin-bottom: 20px;
+}
+
+.footer{
+	margin-top:30px;
+}
+#content .box{
+	width:300px;
+	height:200px;
+	display:inline-block;
+	margin-top:5px;
+	margin-left:30px;
+}
