@@ -7,13 +7,16 @@ class Myadmin extends CI_Controller {
 		parent::__construct();
 		$this->load->database();
 		$this->load->model('modeladmin');
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url(""));
+		} 
 	}
 
-	public function index(){
+	public function index(){	
 		$data['title'] = "Admin Website | Oxford ";
 		$this->load->view('header/headadm', $data);
 		$this->load->view('dashboard');
-		$this->load->view('footer/footadm');
+		$this->load->view('footer/footadm');		
 	}
 	
 
@@ -25,10 +28,42 @@ class Myadmin extends CI_Controller {
 		$this->load->view('footer/footadm');		
 	}
 
-	function editdata($id){
-		$where = array('id' => $id);
-		$data['user'] = $this->modeladmin->edit($where,'data_mahasiswa')->result();
-		$this->load->view('editdata',$data);
+	function editdata($id=null){
+		if(is_null($id)){		
+			$this->session->set_flashdata('message', 'You Lost!');
+			redirect('Myadmin/tambahdata');
+		}else{
+			$data['title'] = "Edit Data | Oxford";
+			$where = array('id' => $id);			
+			$data['user'] = $this->modeladmin->edit($where,'data_mahasiswa')->result();
+			$this->load->view('header/headadm', $data);
+			$this->load->view('editdata',$data);
+			$this->load->view('footer/footadm');
+		}
+		
+		
+		//percobaan error handling page 404.
+
+
+		// foreach ($a as $id) {			
+		// 	$where = array('id' => $id);	
+
+		// 	$b = $this->modeladmin->edit($where,'data_mahasiswa')->get()->row();
+		// 	$exist = $this->modeladmin->edit($where,'data_mahasiswa')->result();
+
+		// 	if($a > 0){
+		// 		$data['user']= $this->db->get()->result();
+		// 		$this->load->view('header/headadm', $data);
+		// 		$this->load->view('editdata', $data);
+		// 		$this->load->view('footer/footadm');
+		// 	}
+		// 	if($a < 0){
+		// 		$this->load->view('header/headadm', $data);
+		// 		$this->load->view('error');
+		// 		$this->load->view('footer/footadm');
+		// 	}
+		// }
+			
 	}
 
 	function f_editdata(){
