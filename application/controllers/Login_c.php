@@ -11,7 +11,7 @@ class Login_c extends CI_Controller {
 
 	function index(){		
 		if($this->session->userdata('status') == "login"){
-			redirect(base_url("Myadmin/tambahdata"));
+			redirect(base_url("Myadmin/"));
 		}
 		$data['title'] = "Login Website | Oxford ";
 		$this->load->view('header/headlog', $data);
@@ -34,7 +34,7 @@ class Login_c extends CI_Controller {
 				);
  
 			$this->session->set_userdata($data_session);
-			redirect(base_url("Myadmin/tambahdata"));
+			redirect(base_url("Myadmin/"));
  
 		}else{			
 			$this->session->set_flashdata('message','Username atau password salah!');
