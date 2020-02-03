@@ -19,12 +19,23 @@ class Register extends CI_Controller {
 	function f_register(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$data = array(
+		$where = array('npm' => $username);
+		$cek = $this->m_login->cek_npm('data_mahasiswa', $where)->num_rows();
+		if($cek > 0){ //jika si npm mahasiswa ada di tabel data mahasiswa. maka:
+			//data dimasukkan/didaftarkan ke database
+
+			//note: tambahin lagi validasi if yang sama kaya diatas supaya npm yang sudah terdaftar ga bisa daftar lagi
+			$data = array(
 			'username' => $username,
 			'password' => sha1($password),
 			'level' => '1');		
-		$this->m_login->tambah('login', $data);
-		redirect('Register/');
+			$this->m_login->tambah('login', $data);
+			$this->session->set_flashdata('message','registrasi berhasil silahkan login!');
+			redirect('Login_c/');
+		} else {
+			$this->session->set_flashdata('message','registrasi gagal npm tidak ada!');
+			redirect('Register/');
+		}
 	}
 
 	

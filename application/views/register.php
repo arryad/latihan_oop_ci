@@ -20,21 +20,5 @@
 			<label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
 		</div>        
 	</form>
-	<p class="text-center"><a href="#">Login</a></p>
+	<p class="text-center"><a href="<?= base_url('Login_c/');?>">Login</a></p>
 </div>
-
-<script type="text/javascript">
-    window.onload = function () {
-        document.getElementById("txtPassword").onchange = validatePassword;
-        document.getElementById("txtConfirmPassword").onchange = validatePassword;
-    }
-
-    function validatePassword(){
-    var pass2=document.getElementById("txtPassword").value;
-    var pass1=document.getElementById("txtConfirmPassword").value;
-    if(pass1!=pass2)
-        document.getElementById("txtPassword").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
-    else
-        document.getElementById("txtConfirmPassword").setCustomValidity('');
-    }
-</script>

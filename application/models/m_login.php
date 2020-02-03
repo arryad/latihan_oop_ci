@@ -11,6 +11,10 @@ class m_login extends CI_model{
 		$this->db->insert($table, $data);
 	}	
 
+	function cek_npm($table, $where){
+		return $this->db->get_where('data_mahasiswa', $where);
+	}
+	
 	function tampil(){
 		return $this->db->get('data_mahasiswa')->result();
 	}
